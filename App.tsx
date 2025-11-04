@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback } from 'react';
 import type { Dish, PhotoStyle } from './types';
 import { generateFoodImage, editFoodImage } from './services/geminiService';
@@ -75,13 +74,13 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100 font-sans p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen bg-gray-100 text-gray-800 font-sans p-4 sm:p-6 lg:p-8">
       <div className="container mx-auto max-w-7xl">
         <header className="text-center mb-8">
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">
             Virtual Food Photographer
           </h1>
-          <p className="mt-2 text-lg text-gray-400">
+          <p className="mt-2 text-lg text-gray-600">
             Turn your menu into stunning, AI-generated food photography.
           </p>
         </header>

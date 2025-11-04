@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { Dish } from '../types';
 import Spinner from './Spinner';
@@ -11,11 +10,11 @@ interface GalleryItemProps {
 
 const GalleryItem: React.FC<GalleryItemProps> = ({ dish, onEdit }) => {
   return (
-    <div className="group relative aspect-w-4 aspect-h-3 bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 border border-gray-700">
+    <div className="group relative aspect-w-4 aspect-h-3 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 border border-gray-200">
       {dish.isGenerating && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 z-10">
           <Spinner className="w-10 h-10" />
-          <p className="text-gray-300 mt-3">Creating masterpiece...</p>
+          <p className="text-white mt-3">Creating masterpiece...</p>
         </div>
       )}
       {dish.imageUrl && (

@@ -22,9 +22,9 @@ const MenuInput: React.FC<MenuInputProps> = ({
   isLoading,
 }) => {
   return (
-    <div className="flex flex-col gap-6 p-6 bg-gray-800/50 rounded-2xl border border-gray-700 h-full">
+    <div className="flex flex-col gap-6 p-6 bg-white rounded-2xl border border-gray-200 shadow-lg h-full">
       <div>
-        <label htmlFor="menu-input" className="block text-lg font-semibold text-gray-300 mb-2">
+        <label htmlFor="menu-input" className="block text-lg font-semibold text-gray-700 mb-2">
           1. Paste Your Menu
         </label>
         <textarea
@@ -32,12 +32,12 @@ const MenuInput: React.FC<MenuInputProps> = ({
           value={menuText}
           onChange={(e) => setMenuText(e.target.value)}
           placeholder="e.g.&#10;Spaghetti Carbonara&#10;Margherita Pizza&#10;Tiramisu"
-          className="w-full h-48 p-3 bg-gray-900 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 resize-none placeholder-gray-500"
+          className="w-full h-48 p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 resize-none placeholder-gray-400 text-gray-800"
           disabled={isLoading}
         ></textarea>
       </div>
       <div>
-        <h3 className="text-lg font-semibold text-gray-300 mb-3">2. Select a Style</h3>
+        <h3 className="text-lg font-semibold text-gray-700 mb-3">2. Select a Style</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {styles.map((style) => (
             <button
@@ -47,7 +47,7 @@ const MenuInput: React.FC<MenuInputProps> = ({
               className={`p-3 rounded-lg text-center font-medium transition-all duration-300 border-2 whitespace-nowrap ${
                 selectedStyle === style
                   ? 'bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-600/30'
-                  : 'bg-gray-700 border-gray-600 hover:bg-gray-600 hover:border-gray-500'
+                  : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400'
               } disabled:opacity-50 disabled:cursor-not-allowed`}
             >
               {style}

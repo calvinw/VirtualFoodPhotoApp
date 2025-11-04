@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import type { Dish } from '../types';
 import Spinner from './Spinner';
@@ -40,18 +39,18 @@ const EditModal: React.FC<EditModalProps> = ({ dish, onClose, onApplyEdit }) => 
 
   return (
     <div 
-      className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+      className="fixed inset-0 bg-gray-900/50 backdrop-blur-sm flex items-center justify-center z-50 p-4"
       onClick={handleClose}
     >
       <div 
-        className="bg-gray-800 rounded-2xl shadow-2xl w-full max-w-2xl transform transition-all duration-300 scale-95 opacity-0 animate-fade-in-scale"
+        className="bg-white text-gray-800 rounded-2xl shadow-2xl w-full max-w-2xl transform transition-all duration-300 scale-95 opacity-0 animate-fade-in-scale"
         onClick={(e) => e.stopPropagation()}
         style={{ animationFillMode: 'forwards' }}
       >
         <div className="p-6">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-2xl font-bold text-white">Edit Photo: <span className="text-blue-400">{dish.name}</span></h2>
-            <button onClick={handleClose} disabled={isEditing} className="text-gray-400 hover:text-white transition-colors">&times;</button>
+            <h2 className="text-2xl font-bold text-gray-900">Edit Photo: <span className="text-blue-600">{dish.name}</span></h2>
+            <button onClick={handleClose} disabled={isEditing} className="text-gray-400 hover:text-gray-800 text-3xl transition-colors">&times;</button>
           </div>
 
           <div className="flex flex-col md:flex-row gap-6">
@@ -60,7 +59,7 @@ const EditModal: React.FC<EditModalProps> = ({ dish, onClose, onApplyEdit }) => 
             </div>
 
             <form onSubmit={handleSubmit} className="md:w-1/2 flex flex-col">
-              <label htmlFor="edit-prompt" className="block text-lg font-semibold text-gray-300 mb-2">
+              <label htmlFor="edit-prompt" className="block text-lg font-semibold text-gray-700 mb-2">
                 Describe your edit
               </label>
               <textarea
@@ -68,7 +67,7 @@ const EditModal: React.FC<EditModalProps> = ({ dish, onClose, onApplyEdit }) => 
                 value={prompt}
                 onChange={(e) => setPrompt(e.target.value)}
                 placeholder="e.g., Add a retro filter, remove the background, make it look more vibrant..."
-                className="w-full flex-grow p-3 bg-gray-900 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-300 resize-none"
+                className="w-full flex-grow p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-300 resize-none text-gray-800 placeholder-gray-400"
                 disabled={isEditing}
               />
               {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
